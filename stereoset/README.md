@@ -1,39 +1,5 @@
-<p align="center">
-    <br>
-        <img src="http://stereoset.mit.edu/github-banner.png"/>
-    <br>
-<p>
+First, we want to reproduce the results in StereoSet:
 
-<h3 align="center">
-<p>StereoSet: Measuring stereotypical bias in pretrained language models
-</h3>
+Since they only kept the results for BERT-base-cased on dev set, we reproduced the results for BERT-base-cased and BERT-base-uncased on test set. The BERT-base-cased results will be compared to the ones on StereoSet paper. The uncased version will be compared to the ones in bias-bench paper and also to the cased version. Note that bias-bench does not have results for NSP.
 
-This repository contains an extensible codebase to measure stereotypical bias on new pretrained models, as well as code to replicate our results. We encourage the community to use this as a springboard for further evaluation of bias in pretrained language models, and to submit attempts to mitigate bias to the [leaderboard](http://stereoset.mit.edu).
-
-**Note:** This repository is currently not actively maintained. For updated code and the full test set, see the [Bias Bench](https://github.com/McGill-NLP/bias-bench) repository.
-
-## Installation
-1. Clone the repository: `git clone https://github.com/moinnadeem/stereoset.git`
-2. Install the requirements: `cd stereoset && pip install -r requirements.txt`
-
-## Reproducing Results
-To reproduce our results for the bias in each model:
-
-1. Run `make` from the `code` folder. This step evaluates the biases on each model.
-2. Run the scoring script with respect to each model: `python3 evaluation.py --gold-file ../data/dev.json --predictions-dir predictions/`. 
-
-We have provided our predictions in the `predictions/` folder, and the output of the evaluation script in `predictions.txt`. We have also included code to replicate our numbers on each table in the `tables/` folder. Please feel free to file an issue if anything is off; we strongly believe in reproducible research and extensible codebases.
-
-## Citation
-To cite StereoSet: 
-
-```
-@misc{nadeem2020stereoset,
-    title={StereoSet: Measuring stereotypical bias in pretrained language models},
-    author={Moin Nadeem and Anna Bethke and Siva Reddy},
-    year={2020},
-    eprint={2004.09456},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
-}
-```
+For StereoSet, there was an error in eval_discriminate_models.py line 222 as the first argument should be a tensor. To fix this, we replace "outputs" with "outputs.logits". This error may have happened because the code on StereoSet github is not maintained and "outputs", an instance of "NextSentencePredictorOutput", is updated with new attributes.
