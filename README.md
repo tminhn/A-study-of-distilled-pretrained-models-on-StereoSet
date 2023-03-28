@@ -11,4 +11,4 @@ Firstly, we want to reproduce the results in StereoSet. The results for StereoSe
 3. Potential problem: In the StereoSet paper, the evaluation metrics for intrasentence and interesentence are the log probabilities, but they only used softmax in the code. Using this provided code, we are able to reproduce the scores in the paper.
 
 
-Next we can finetune Bert-base-uncased with different dropout configuration using dataset Wiki-10 from bias-bench paper so we can compare later.
+Next we can finetune Bert-base-uncased with different dropout configuration using dataset Wiki-10 from bias-bench paper so we can compare later. At this point, we only borrow the idea from Webster et al. (2020), and reproduce the setup for bias-bench.
