@@ -3,7 +3,7 @@
 </h3>
 
 
-## Reproduce the results in StereoSet with codes from https://github.com/moinnadeem/StereoSet/tree/master/code. 
+### Reproduce the results in StereoSet with codes from https://github.com/moinnadeem/StereoSet/tree/master/code. 
 
 The results for StereoSet scrores are in `stereoset/code/test_predictions.json`
 
@@ -17,7 +17,7 @@ The results for StereoSet scrores are in `stereoset/code/test_predictions.json`
 
 Next we can finetune Bert-base-uncased with different dropout configuration using dataset Wiki-10 from bias-bench paper so we can compare later. At this point, we only borrow the idea from Webster et al. (2020), and reproduce the setup for bias-bench.
 
-## Finetune with dropout configurations with codes from https://github.com/McGill-NLP/bias-bench
+### Finetune with dropout configurations with codes from https://github.com/McGill-NLP/bias-bench
 
 1. To finetune models, we use `run_mlm.py` (this file is similar to the finetuning file `run_mlm.py` from huggingface https://github.com/huggingface/transformers/tree/main/examples/pytorch/language-modeling) with added blocks of code for debiasing (new argument for dropout is one of the added code). Because the bias-bench paper has a fixed configuration for dropout parameters (the dropout_debias option is boolean), we modified the argument to specify `hidden_dropout_prob`, `attention_probs_dropout_prob`.
 
