@@ -1,4 +1,8 @@
-# IF6289_project_BERT
+<p align="center">
+    <br>
+        IF6289_project_BERT
+    <br>
+<p> 
 
 # Reproduce the results in StereoSet with codes from https://github.com/moinnadeem/StereoSet/tree/master/code. 
 
