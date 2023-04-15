@@ -27,7 +27,7 @@ codes from https://github.com/McGill-NLP/bias-bench
 
 2. Current problems: running out of CUDA memory. We need to change the batch_size and gradient_accumulation_steps or using other techniques to finetune model. We also added --fp16 argument to reduce memory usage. This may lead to worse performance. Also, we consider using DistilBERT for faster training and it can be a good comparision to the BERT perfomance in bias-bench.
 
-3. We decide to add DistilBERT because of the above reason. Because DistilBERT was not trained on NextSentencePrediction and finetune it on that task is not feasible, we only measure its intrasentence performance. We added the code for DistilBERT in bias-bench.
+3. We decide to add DistilBERT because of the above reason. Because DistilBERT was not trained on NextSentencePrediction and finetune it on that task is not feasible, we only measure its intrasentence performance. We added the code for DistilBERT in bias-bench (adapted the code because DistilBERT does not use token_type_ids).
 
 4. New problems for finetuning: There is a common trend that lms decreases while ss improves. The problem is we don't know the decrease in bias is because of the debiasing method or just the model performing worse (this is also mentioned in bias-bench). The second problem is how we finetune the model. To finetune on our computers, we have to lower the batch_size and use a smaller dataset (wikipedia 2.5 instead of wikipedia 10). This may decrease the performance no matter dropout configurations. How can we find a stable configuration to finetune?
 
