@@ -32,3 +32,7 @@ codes from https://github.com/McGill-NLP/bias-bench
 4. New problems for finetuning: There is a common trend that lms decreases while ss improves. The problem is we don't know the decrease in bias is because of the debiasing method or just the model performing worse (this is also mentioned in bias-bench). The second problem is how we finetune the model. To finetune on our computers, we have to lower the batch_size and use a smaller dataset (wikipedia 2.5 instead of wikipedia 10). This may decrease the performance no matter dropout configurations. How can we find a stable configuration to finetune?
 
 5. Quick observations: DistilBERT's lms is better than BERT's (why? could it be because DistilBERT was mainly pretrained on Fill-Mask?). icat for finetuned DistilBERT seems to improve slightly with worse lms and better ss. While for finetuned BERT, it seems that lms and ss are getting worse in bias-bench. However, bias-bench does not use "profession" bias and doesnt include icat. It is likely that finetuned BERT's icat is also getting worse (this has not been verified with our setup). If this is true, it could be interesting to explain why there is an opposite trend for DistilBERT and BERT (could it be because DistilBERT is smaller and reacts better to training?)
+
+6. We redo all the finetuning with dropout to make sure that we compare results on the same dataset (wikitext) and eliminate the possibility that wikitext has less bias than 10% wiki dump.
+
+7. We finetune all the distilled models with and without dropout.
