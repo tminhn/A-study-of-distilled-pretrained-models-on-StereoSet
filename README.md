@@ -36,3 +36,16 @@ codes from https://github.com/McGill-NLP/bias-bench
 6. We redo all the finetuning with dropout to make sure that we compare results on the same dataset (wikitext) and eliminate the possibility that wikitext has less bias than 10% wiki dump.
 
 7. We finetune all the distilled models with and without dropout.
+
+8. Other papers suggest that distilled models magnify the bias of teacher at checkpoint, while our evidence suggests that after finetuning (with or without dropout), the tradeoff between lms and ss is smaller for distilled models (their perfomance is retained more while being less bias). Also, we consider all the bias, not just gender. Note that our evidence/hypothesis does not disagree with those papers.
+
+9. Observation: Dropout for distilled models dont affect results much. Why? Because already efficient?
+
+10. Hypothesis: icat increasing trend happens for 2 reasons: fill-mask and distillation.
+
+11. Analysis: From evidences, distillation can be the key.
+
+12. Report:
+    a. Compare the finetuned perfomance of bert, albert, roberta, gpt2 of low setting vs bias-bench seting, so we know that using low setting is acceptable.
+    b. if possible, compare finetuned models with and without dropout. This may affect results for models while may not for distilled models.
+    c. compare the trend of icat after finetuning for all models. Quick guess: 
