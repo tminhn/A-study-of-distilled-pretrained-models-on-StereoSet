@@ -45,7 +45,7 @@ codes from https://github.com/McGill-NLP/bias-bench
 
 11. Analysis: From evidences, distillation can be the key.
 
-12. Report:
-    a. Compare the finetuned perfomance of bert, albert, roberta, gpt2 of low setting vs bias-bench seting, so we know that using low setting is acceptable.
-    b. if possible, compare finetuned models with and without dropout. This may affect results for models while may not for distilled models.
+12. Report: \
+    a. Compare the finetuned perfomance of bert, albert, roberta, gpt2 of low setting vs bias-bench seting, so we know that using low setting is acceptable. \
+    b. if possible, compare finetuned models with and without dropout. This may affect results for models while may not for distilled models.\
     c. compare the trend of icat after finetuning for all models. Quick guess: 
