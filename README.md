@@ -40,7 +40,9 @@ terms. We have also proposed a hypothesis that
 encoders-only and decoders-only transformers
 react differently to distillation and finetuning
 in terms of icat, which could be explored for
-deeper understanding of language models
+deeper understanding of language models.
+
+The report, formatted in ACL style, is available as a PDF and can be found [here](./distilled_pretrained_models_StereoSet.pdf).
 
 <h3 align="center">
 <p>Adaptation
