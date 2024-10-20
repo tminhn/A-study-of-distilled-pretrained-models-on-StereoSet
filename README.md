@@ -1,7 +1,7 @@
 <h3 align="center">
-<p>IF6289_project_BERT
+<p>Project for IFT6289 - Natural Language Processing with Deep Learning
 </h3>
-
+This is a final project for the course IFT6289 - Natural Language Processing with Deep Learning, offered at University of Montreal.
 <h3 align="center">
 <p>Abstract
 </h3>
